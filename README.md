@@ -62,6 +62,14 @@ user.auth_token # => "pX27zsMN2ViQKta1bGfLmVJE"
 user.regenerate_auth_token # => true
 ```
 
+To prevent the token from being generated when model is created, you can specify the generate_on_create option (default is true):
+
+```ruby
+class User < ActiveRecord::Base
+  has_secure_token :auth_token, false
+end
+```
+
 ## Running tests
 
 Running
